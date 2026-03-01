@@ -12,7 +12,7 @@ The model covers gene expression, nutrient uptake and metabolism, biosynthesis a
 
 ## Project Structure
 
-### Batch/
+### Batch——culture/
 
 Batch culture simulations to verify that the CCR model reproduces the diauxic growth phenotype of CCR. Converts the chemostat model to a closed batch system (D=0, no inflow).
 
@@ -24,6 +24,6 @@ Independent cultivation of each strategy in separate chemostats. Provides initia
 
 Co-culture competition simulations. Transcriptional and post-transcriptional CCR are placed in the same chemostat with periodic carbon source switching, and competition outcomes are classified across a grid of environmental conditions to determine whether CCR confers a comparative advantage.
 
-### Chemostat_competition/
+### Competition_timeseries/
 
 Time-series analysis and visualization of co-culture competition between Transcriptional CCR and Post-transcriptional CCR, primarily used to determine whether the comparative advantage differences arise from the differential management of the trade-off between high growth rate and fast adaptive capacity through resource conservation and rapid response properties. Generates detailed timeseries plots (P1-P5) of biomass dynamics, state variables, state variable differences, specific growth rate, and specific growth rate differences for the last complete cycle, and QuadGK integration analysis of synthesis rates and resource investment ratio.
