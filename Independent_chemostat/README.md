@@ -8,19 +8,28 @@ This module serves two purposes:
 
 ## Files
 
-### Core model
+### Model
 
 - **`independent_chemostat_definitions.jl`** — Model definitions: parameter struct, 10-dimensional ODE system per strategy (S1, S2, X1, M1, E1, X2, M2, E2, c⁻, c), simulation runner, biomass analysis, and endpoint state extraction.
 
 ### HPC workflow (NeSI/SLURM)
 
-- **`submit_independent_chemostat_grid.jl`** — Generates and submits SLURM job arrays. Each job runs one T1 index across all T2 values with a grid of initial biomass values.
-- **`run_independent_chemostat_grid.jl`** — Executed by each SLURM job. Runs independent cultivation for a single T1 across all T2 values with `grid_size`² initial biomass combinations.
+- **`submit_independent_chemostat_grid.jl`** — Generates and submits SLURM job arrays. 
+- **`run_independent_chemostat_grid.jl`** — Executed by each SLURM job. 
 - **`collect_independent_chemostat_summaries.jl`** — Collects individual job summary CSVs into a single combined file.
 
 ### Visualization
 
-- **`Independent_chemostat_visualization.jl`** — Generates phase diagrams (T1 vs T2 heatmaps) showing which strategy achieves higher biomass. Supports multi-subplot layouts for comparing across D values.
+- **`Independent_chemostat_visualization.jl`** — Generates comparison diagram showing which strategy achieves higher biomass. Supports multi-subplot layouts for comparing across D values.
+
+
+
+## Workflow
+
+1. **Submit jobs**: `julia submit_independent_chemostat_grid.jl`
+2. **Jobs run on cluster**: Each SLURM job executes `run_independent_chemostat_grid.jl`
+3. **Collect results**: `julia collect_independent_chemostat_summaries.jl <input_dir>`
+4. **Visualize**: Edit `csv_files` in `Independent_chemostat_visualization.jl` and run it
 
 ## Environment Variables
 
@@ -40,15 +49,4 @@ export CCR_PROJECT_DIR="independent_grid" # Base project directory
 export CCR_OUTPUT_DIR="results"           # Output directory for results
 ```
 
-## Workflow
 
-1. **Submit jobs**: `julia submit_independent_chemostat_grid.jl`
-2. **Jobs run on cluster**: Each SLURM job executes `run_independent_chemostat_grid.jl`
-3. **Collect results**: `julia collect_independent_chemostat_summaries.jl <input_dir>`
-4. **Visualize**: Edit `csv_files` in `Independent_chemostat_visualization.jl` and run it
-
-## Dependencies
-
-- Julia 1.11+
-- DifferentialEquations, DiffEqCallbacks, CSV, DataFrames, Statistics, Printf, Dates
-- Plots, ColorSchemes (visualization only)
