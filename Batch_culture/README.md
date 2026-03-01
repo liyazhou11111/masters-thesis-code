@@ -15,9 +15,3 @@ Batch culture simulations for the three CCR strategies (No CCR, Transcriptional 
 Run in Julia/VSCode: `include("batch.jl")`
 
 Plots are displayed and saved as PDF to `plot_results/`.
-
-## Dependencies
-
-- Julia 1.11+
-- DifferentialEquations, Printf
-- Plots, Plots.PlotMeasures (visualization)
