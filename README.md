@@ -1,6 +1,4 @@
-# Transcriptional and Post-transcriptional CCR Competition Model
-
-Simulation code for the study: *Transcriptional and post-transcriptional carbon catabolite repression differentially manage the trade-off between high growth rate and fast adaptive capacity*.
+# Transcriptional and post-transcriptional carbon catabolite repression differentially manage the trade-off between high growth rate and fast adaptive capacity
 
 This project investigates whether transcriptional and post-transcriptional carbon catabolite reression (CCR) differentially manage the trade-off between high growth rate and fast adaptive capacity through their respective properties of resource conservation and rapid response, thereby conferring comparative advantages in different environments. To this end, we developed a chemostat-based mathematical model that includes three CCR regulatory strategies:
 
@@ -16,16 +14,16 @@ The model covers gene expression, nutrient uptake and metabolism, biosynthesis a
 
 ### Batch/
 
-Batch culture simulations to verify that the model reproduces the diauxic growth phenotype of CCR. Converts the chemostat model to a closed batch system (D=0, no inflow).
+Batch culture simulations to verify that the CCR model reproduces the diauxic growth phenotype of CCR. Converts the chemostat model to a closed batch system (D=0, no inflow).
 
 ### Independent_chemostat/
 
-Independent cultivation of each strategy in separate chemostats under identical environmental conditions. Provides initial conditions for all co-culture competition simulations and compares biomass between strategies grown independently.
+Independent cultivation of each strategy in separate chemostats. Provides initial conditions for all co-culture competition simulations and compares biomass between strategies grown independently.
 
 ### Competition_chemostat/
 
-Co-culture competition simulations. Two strategies are placed in the same chemostat with periodic carbon source switching (S1 pulsed, S2 constant), and competition outcomes are classified across a grid of environmental conditions (T1, T2) to determine whether CCR confers a comparative advantage.
+Co-culture competition simulations. Transcriptional and post-transcriptional CCR are placed in the same chemostat with periodic carbon source switching, and competition outcomes are classified across a grid of environmental conditions to determine whether CCR confers a comparative advantage.
 
 ### Chemostat_competition/
 
-Time-series analysis and visualization of co-culture competition between Transcriptional CCR and Post-transcriptional CCR, primarily used to determine whether the comparative advantage differences arise from the differential management of the trade-off between high growth rate and fast adaptive capacity through resource conservation and rapid response properties. Generates detailed plots (P1-P5) of biomass dynamics, state variables, variable differences, specific growth rate decomposition, and growth rate differences for the last complete cycle, and QuadGK integration analysis of synthesis rates and resource investment ratio.
+Time-series analysis and visualization of co-culture competition between Transcriptional CCR and Post-transcriptional CCR, primarily used to determine whether the comparative advantage differences arise from the differential management of the trade-off between high growth rate and fast adaptive capacity through resource conservation and rapid response properties. Generates detailed timeseries plots (P1-P5) of biomass dynamics, state variables, state variable differences, specific growth rate, and specific growth rate differences for the last complete cycle, and QuadGK integration analysis of synthesis rates and resource investment ratio.
