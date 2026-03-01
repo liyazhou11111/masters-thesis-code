@@ -30,8 +30,8 @@ mutable struct Parameters
     KS2::Float64         # S2 uptake half-saturation constant
  
     # Metabolism
-    alpha1::Float64      # X1 metabolic rate constant
-    alpha2::Float64      # X2 metabolic rate constant
+    alpha1::Float64      # X1 metabolic conversion rate constant
+    alpha2::Float64      # X2 metabolic conversion rate constant
 
     # Gene expression
     kM::Float64          # mRNA synthesis rate constant
