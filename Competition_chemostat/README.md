@@ -6,9 +6,9 @@ Three strategies are defined that differ solely in the level of CCR regulation:
 
 | Index | Strategy | Description |
 |-------|----------|-------------|
-| 0 | No CCR (N) | No regulation on the S₂ pathway |
-| 1 | Transcriptional CCR (T) | Represses S₂ mRNA synthesis when S₁ is available |
-| 2 | Post-transcriptional CCR (P) | Represses S₂ enzyme synthesis when S₁ is available |
+| 0 | No CCR (N) | No CCR regulation  |
+| 1 | Transcriptional CCR (T) | CCR regulation on transcriptional level |
+| 2 | Post-transcriptional CCR (P) | CCR regulation on post-transcriptional level |
 
 Two competition experiments are performed:
 - **No CCR vs Transcriptional CCR (0-1)**: Verifies that CCR confers a comparative advantage under tested conditions, using the initial parameter set.
